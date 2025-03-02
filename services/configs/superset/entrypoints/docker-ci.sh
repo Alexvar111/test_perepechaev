@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-/services/configs/superset/docker-init.sh
+/app/docker/docker-init.sh
 
 # TODO: copy config overrides from ENV vars
 
@@ -23,4 +23,4 @@
 export SERVER_THREADS_AMOUNT=8
 # start up the web server
 
-/services/configs/superset/entrypoints/run-server.sh
+/app/docker/entrypoints/run-server.sh

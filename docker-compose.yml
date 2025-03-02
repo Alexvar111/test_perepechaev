@@ -608,7 +608,7 @@ services:
   superset-init:
     image: apachesuperset.docker.scarf.sh/apache/superset:latest-dev
     container_name: superset_init
-    command: ["/services/configs/superset/docker-init.sh"]
+    command: ["/app/docker/docker-init.sh"]
     env_file:
       - path: ./services/configs/superset/.env  # default
         required: true
@@ -632,7 +632,7 @@ services:
   superset-worker:
     image: apachesuperset.docker.scarf.sh/apache/superset:latest-dev
     container_name: superset_worker
-    command: ["/services/configs/superset/docker-bootstrap.sh", "worker"]
+    command: ["/app/docker/docker-bootstrap.sh", "worker"]
     env_file:
       - path: ./services/configs/superset/.env  # default
         required: true
@@ -658,7 +658,7 @@ services:
   superset-worker-beat:
     image: apachesuperset.docker.scarf.sh/apache/superset:latest-dev
     container_name: superset_worker_beat
-    command: ["/services/configs/superset/docker-bootstrap.sh", "beat"]
+    command: ["/app/docker/docker-bootstrap.sh", "beat"]
     env_file:
       - path: ./services/configs/superset/.env  # default
         required: true
