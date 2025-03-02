@@ -11,14 +11,13 @@
 # |hadoop            |10.19.88.107|9009|         |        |
 # |hadoop            |10.19.88.107|9864|         |        |
 # |jupiterhub_pyspark|10.19.88.108|8888|         |8f293bafa3f498e7d6a8a09baa58cc2290115e95|
-# |superset_app      |10.19.88.109|8088|admin    |admin   |
+# |superset_app      |10.19.88.109|8088|tech_load|dwh88   |
 # |grafana           |10.19.88.110|3000|tech_load|dwh88   |
 # |trino             |10.19.88.111|8081|admin    |        |#пароля нет
 # |mariadb           |10.19.88.112|3306|admin    |admin   |
 # |hive-metastore    |10.19.88.113|9083|         |        |
 
-# create sandbox_db:
-# mkdir -p ./services/volume/airflow/dags ./services/volume/airflow/logs ./services/volume/airflow/plugins ./services/volume/airflow/config ./services/volume/postgres ./services/volume/minio ./services/configs/airflow
+# Запуск проекта sandbox_db:
 # mkdir -p ./services/volume/{airflow/{dags,logs,plugins,config},postgres,minio} 
 # mkdir -p ./services/configs/{airflow,hadoop,jupiterhub}
 # mkdir -p ./services/datasets
@@ -27,9 +26,8 @@
 # sudo docker compose up airflow-init
 # sudo docker compose up -d
 #
-# delete sandbox_db
+# Удаление проекта sandbox_db
 # sudo docker compose down
-# rm -rf pgdata/
 #
 # full delete sandbox_db
 # docker compose down --volumes --rmi all
@@ -46,6 +44,7 @@
 services:
   postgres_dwh:
     image: postgres:17.0-alpine
+    hostname: postgres_dwh
     command:
       - "postgres"
       - "-c"
@@ -148,8 +147,8 @@ services:
         ipv4_address: 10.19.88.113
 
   minio:
-    hostname: minio
     image: minio/minio:latest
+    hostname: minio
     container_name: minio
     restart: always
     ports:
@@ -197,6 +196,7 @@ services:
 
   click_server:
     image: clickhouse/clickhouse-server:24.8.4
+    hostname: clickhouse
     container_name: dwh_click
     restart: always
     ports:

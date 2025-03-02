@@ -66,10 +66,21 @@ rm -rf pgdata/
 Это позволяет выучить их один раз и затем использовать при работе и настройке этих сервисов
 ```
 IP list:
-|NAME             |IP          |PORT|LOGIN    |PASSWORD|
-|-----------------+------------+----+---------+--------+
-|dwh_pg           |10.19.88.101|5432|tech_load|dwh88   |
-|dwh_minio        |10.19.88.102|9000|tech_load|minio123|
-|dwh_click        |10.19.88.103|8123|tech_load|dwh88   |
-|airflow_webserver|10.19.88.104|8080|airflow  |airflow |
+|NAME              |IP          |PORT|LOGIN    |PASSWORD|
+|------------------+------------+----+---------+--------+
+|dwh_pg            |10.19.88.101|5432|tech_load|dwh88   |
+|dwh_minio         |10.19.88.102|9000|tech_load|dwh12345|
+|dwh_click         |10.19.88.103|8123|tech_load|dwh88   |
+|airflow_webserver |10.19.88.104|8080|airflow  |airflow |
+|zookeeper         |10.19.88.105|2181|         |        |
+|kafka             |10.19.88.106|9092|tech_load|dwh88   |
+|hadoop            |10.19.88.107|9870|         |        |
+|hadoop            |10.19.88.107|9009|         |        |
+|hadoop            |10.19.88.107|9864|         |        |
+|jupiterhub_pyspark|10.19.88.108|8888|         |8f293bafa3f498e7d6a8a09baa58cc2290115e95|
+|superset_app      |10.19.88.109|8088|tech_load|dwh88   |
+|grafana           |10.19.88.110|3000|tech_load|dwh88   |
+|trino             |10.19.88.111|8081|admin    |        |#пароля нет
+|mariadb           |10.19.88.112|3306|admin    |admin   |
+|hive-metastore    |10.19.88.113|9083|         |        |
 ```
