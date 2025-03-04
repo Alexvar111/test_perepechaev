@@ -13,7 +13,7 @@
 # |jupiterhub_pyspark|10.19.88.108|8888|         |8f293bafa3f498e7d6a8a09baa58cc2290115e95|
 # |superset_app      |10.19.88.109|8088|tech_load|dwh88   |
 # |grafana           |10.19.88.110|3000|tech_load|dwh88   |
-# |trino             |10.19.88.111|8081|admin    |        |#пароля нет
+# |trino             |10.19.88.114|8080|admin    |        |
 # |mariadb           |10.19.88.112|3306|admin    |admin   |
 # |hive-metastore    |10.19.88.113|9083|         |        |
 
@@ -108,12 +108,12 @@ services:
     hostname: trino-coordinator
     # restart: always
     ports:
-      - '8081:8081'
+      - '8080:8080'
     volumes:
       - ./services/configs/trino:/etc/trino
     networks:
       golos_tech:
-        ipv4_address: 10.19.88.111
+        ipv4_address: 10.19.88.114
 
   mariadb:
     image: 'mariadb:latest'
