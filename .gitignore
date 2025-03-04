@@ -1,16 +1,4 @@
 # SandBox_DB Trash Object
-init/
-services/volume/airflow/logs
-services/volume/airflow/dags
-services/volume/airflow/config
-services/volume/airflow/plugins
-services/volume/jupiterhub
-services/volume/minio
-services/datasets/
-services/volume/postgres
-services/volume/clickhouse
-
-
 
 
 
