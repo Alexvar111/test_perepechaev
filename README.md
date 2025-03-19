@@ -70,7 +70,7 @@ IP list:
 |jupiterhub_pyspark|10.19.88.108|8888|         |8f293bafa3f498e7d6a8a09baa58cc2290115e95|
 |superset_app      |10.19.88.109|8088|tech_load|dwh88   |
 |grafana           |10.19.88.110|3000|tech_load|dwh88   |
-|trino             |10.19.88.114|8080|admin    |        |
+|trino             |10.19.88.114|8081|admin    |        |
 |mariadb           |10.19.88.112|3306|admin    |admin   |
 |hive-metastore    |10.19.88.113|9083|         |        |
 ```
